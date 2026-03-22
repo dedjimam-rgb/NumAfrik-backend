@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NumAfrik — Numéros Virtuels pour l'Afrique de l'Ouest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #060A0F; --s1: #0D1520; --s2: #152030;
+      --gold: #F5B800; --green: #00A550; --red: #CC2200;
+      --white: #F0F4FF; --muted: #7B8DB0;
+      --syne: 'Syne', sans-serif; --sans: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--white); font-family: var(--sans); overflow-x: hidden; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 24px; background: rgba(6,10,15,0.9); backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(245,184,0,0.1);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+    .nav-logo span { font-family: var(--syne); font-size: 20px; font-weight: 800; }
+    .nav-logo span em { color: var(--gold); font-style: normal; }
+    .nav-cta {
+      background: var(--gold); color: #060A0F; border: none; border-radius: 20px;
+      padding: 10px 20px; font-family: var(--syne); font-weight: 700; font-size: 14px;
+      cursor: pointer; text-decoration: none;
+    }
+    .hero {
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      padding: 100px 24px 60px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(245,184,0,0.12) 0%, transparent 60%);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(245,184,0,0.1); border: 1px solid rgba(245,184,0,0.2);
+      border-radius: 20px; padding: 8px 16px; font-size: 13px; color: var(--gold);
+      margin-bottom: 28px;
+    }
+    .hero-logo {
+      width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+      margin-bottom: 28px; box-shadow: 0 0 60px rgba(245,184,0,0.3);
+    }
+    .hero-title {
+      font-family: var(--syne); font-size: clamp(32px, 8vw, 56px); font-weight: 800;
+      line-height: 1.1; margin-bottom: 20px;
+    }
+    .hero-title em { color: var(--gold); font-style: normal; }
+    .hero-sub { font-size: clamp(15px, 3vw, 18px); color: var(--muted); max-width: 560px; line-height: 1.6; margin-bottom: 36px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+    .btn-gold {
+      background: var(--gold); color: #060A0F; border: none; border-radius: 12px;
+      padding: 15px 32px; font-family: var(--syne); font-size: 16px; font-weight: 800;
+      cursor: pointer; text-decoration: none;
+    }
+    .btn-outline {
+      background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px; padding: 15px 32px; font-family: var(--syne); font-size: 16px; font-weight: 700;
+      cursor: pointer; text-decoration: none;
+    }
+    .hero-stats { display: flex; gap: 40px; margin-top: 60px; flex-wrap: wrap; justify-content: center; }
+    .hero-stat { text-align: center; }
+    .hero-stat-val { font-family: var(--syne); font-size: 28px; font-weight: 800; color: var(--gold); }
+    .hero-stat-lbl { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-logo">
+      <img src="logo.png" alt="NumAfrik" />
+      <span>Num<em>Afrik</em></span>
+    </div>
+    <a href="#app" class="nav-cta">Commencer →</a>
+  </nav>
+  <div class="hero">
+    <div class="hero-badge">🌍 La plateforme #1 de numéros virtuels en Afrique de l'Ouest</div>
+    <img class="hero-logo" src="logo.png" alt="NumAfrik" />
+    <h1 class="hero-title">Ton numéro virtuel<br /><em>en quelques secondes</em></h1>
+    <p class="hero-sub">Reçois des SMS de validation pour Google, WhatsApp, TikTok, Telegram. Paie en Mobile Money — T-Money, Flooz, MTN, Wave.</p>
+    <div class="hero-btns">
+      <a href="#app" class="btn-gold">⚡ Commander un numéro</a>
+      <a href="#comment" class="btn-outline">Comment ça marche →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-val">1 017</div><div class="hero-stat-lbl">Services disponibles</div></div>
+      <div class="hero-stat"><div class="hero-stat-val">50+</div><div class="hero-stat-lbl">Pays disponibles</div></div>
+      <div class="hero-stat"><div class="hero-stat-val">20 min</div><div class="hero-stat-lbl">Remboursement garanti</div></div>
+      <div class="hero-stat"><div class="hero-stat-val">100%</div><div class="hero-stat-lbl">Mobile Money</div></div>
+    </div>
+  </div>
+  <style>
+    .services-strip { background: var(--s1); border-top: 1px solid rgba(245,184,0,0.1); border-bottom: 1px solid rgba(245,184,0,0.1); padding: 20px 0; overflow: hidden; }
+    .strip-track { display: flex; gap: 32px; animation: scrollLeft 20s linear infinite; white-space: nowrap; }
+    .strip-item { display: flex; align-items: center; gap: 10px; flex-shrink: 0; font-size: 14px; font-weight: 600; color: var(--muted); }
+    @keyframes scrollLeft { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    section { padding: 80px 24px; max-width: 1100px; margin: 0 auto; }
+    .section-badge { display: inline-block; background: rgba(245,184,0,0.1); color: var(--gold); border: 1px solid rgba(245,184,0,0.2); border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+    .section-title { font-family: var(--syne); font-size: clamp(24px, 5vw, 36px); font-weight: 800; margin-bottom: 12px; }
+    .section-title em { color: var(--gold); font-style: normal; }
+    .section-sub { font-size: 16px; color: var(--muted); max-width: 500px; line-height: 1.6; margin-bottom: 48px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+    .step { background: var(--s1); border: 1px solid rgba(245,184,0,0.1); border-radius: 20px; padding: 28px; position: relative; overflow: hidden; }
+    .step-icon { font-size: 36px; margin-bottom: 16px; }
+    .step-title { font-family: var(--syne); font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .step-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+    .services-section { background: var(--s1); padding: 80px 24px; }
+    .services-inner { max-width: 1100px; margin: 0 auto; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
+    .svc { background: var(--s2); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 20px; text-align: center; }
+    .svc-icon { font-size: 32px; margin-bottom: 10px; }
+    .svc-name { font-weight: 600; font-size: 13px; }
+    .svc-count { font-size: 11px; color: var(--muted); margin-top: 4px; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .price-card { background: var(--s1); border: 1px solid rgba(255,255,255,0.07); border-radius: 20px; padding: 28px; }
+    .price-card.featured { background: linear-gradient(135deg, #1A2A0A, #0A1A20); border-color: rgba(245,184,0,0.4); }
+    .price-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 12px; }
+    .price-amount { font-family: var(--syne); font-size: 32px; font-weight: 800; color: var(--gold); }
+    .price-amount span { font-size: 14px; color: var(--muted); font-family: var(--sans); }
+    .price-desc { font-size: 13px; color: var(--muted); margin: 12px 0; line-height: 1.5; }
+    .price-features { list-style: none; }
+    .price-features li { font-size: 13px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 8px; }
+    .price-features li::before { content: '✓'; color: var(--green); font-weight: 700; }
+    .payment-methods { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; }
+    .pay-method { background: var(--s1); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
+    .pay-icon { font-size: 28px; }
+    .pay-name { font-weight: 700; font-size: 15px; }
+    .pay-country { font-size: 12px; color: var(--muted); }
+    .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .testi { background: var(--s1); border: 1px solid rgba(255,255,255,0.07); border-radius: 20px; padding: 24px; }
+    .testi-text { font-size: 15px; line-height: 1.7; color: var(--muted); margin-bottom: 16px; font-style: italic; }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--gold); color: #060A0F; display: flex; align-items: center; justify-content: center; font-family: var(--syne); font-weight: 800; font-size: 16px; }
+    .testi-name { font-weight: 700; font-size: 14px; }
+    .testi-loc { font-size: 12px; color: var(--muted); }
+    .stars { color: var(--gold); font-size: 14px; margin-bottom: 12px; }
+    .cta-section { background: linear-gradient(135deg, #0D1A08, #081520); border-top: 1px solid rgba(245,184,0,0.15); padding: 80px 24px; text-align: center; }
+    .cta-inner { max-width: 600px; margin: 0 auto; }
+    footer { background: var(--s1); border-top: 1px solid rgba(255,255,255,0.06); padding: 40px 24px; text-align: center; }
+    .footer-logo { display: flex; align-items: center; gap: 10px; justify-content: center; margin-bottom: 16px; }
+    .footer-logo img { width: 36px; height: 36px; border-radius: 50%; }
+    .footer-logo span { font-family: var(--syne); font-size: 18px; font-weight: 800; }
+    .footer-logo span em { color: var(--gold); font-style: normal; }
+    .footer-text { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+    .footer-copy { font-size: 12px; color: rgba(123,141,176,0.5); margin-top: 20px; }
+  </style>
+
+  <div class="services-strip">
+    <div class="strip-track">
+      <div class="strip-item"><span>🟦</span> Google</div>
+      <div class="strip-item"><span>🟢</span> WhatsApp</div>
+      <div class="strip-item"><span>⬛</span> TikTok</div>
+      <div class="strip-item"><span>🔷</span> Telegram</div>
+      <div class="strip-item"><span>🔵</span> Facebook</div>
+      <div class="strip-item"><span>🌸</span> Instagram</div>
+      <div class="strip-item"><span>🔴</span> Netflix</div>
+      <div class="strip-item"><span>🟠</span> Amazon</div>
+      <div class="strip-item"><span>🟦</span> Google</div>
+      <div class="strip-item"><span>🟢</span> WhatsApp</div>
+      <div class="strip-item"><span>⬛</span> TikTok</div>
+      <div class="strip-item"><span>🔷</span> Telegram</div>
+      <div class="strip-item"><span>🔵</span> Facebook</div>
+      <div class="strip-item"><span>🌸</span> Instagram</div>
+      <div class="strip-item"><span>🔴</span> Netflix</div>
+      <div class="strip-item"><span>🟠</span> Amazon</div>
+    </div>
+  </div>
+
+  <section id="comment">
+    <div class="section-badge">🚀 Simple et rapide</div>
+    <h2 class="section-title">Comment ça <em>marche</em> ?</h2>
+    <p class="section-sub">En 3 étapes simples, reçois ton code en moins de 5 minutes.</p>
+    <div class="steps">
+      <div class="step"><div class="step-icon">📱</div><div class="step-title">Choisis ton service</div><div class="step-desc">Google, WhatsApp, TikTok, Telegram... Plus de 1 000 services disponibles.</div></div>
+      <div class="step"><div class="step-icon">💳</div><div class="step-title">Recharge et commande</div><div class="step-desc">Paie avec T-Money, Flooz, MTN MoMo, Wave ou Orange Money.</div></div>
+      <div class="step"><div class="step-icon">✅</div><div class="step-title">Reçois ton code SMS</div><div class="step-desc">Le code s'affiche automatiquement. Remboursement garanti si pas de SMS en 20 min.</div></div>
+    </div>
+  </section>
+
+  <div class="services-section" id="services">
+    <div class="services-inner">
+      <div class="section-badge">📱 1 017 services</div>
+      <h2 class="section-title">Services <em>populaires</em></h2>
+      <p class="section-sub">Valide ton compte sur n'importe quelle plateforme mondiale.</p>
+      <div class="services-grid">
+        <div class="svc"><div class="svc-icon">🟦</div><div class="svc-name">Google / Gmail</div><div class="svc-count">780 000+ numéros</div></div>
+        <div class="svc"><div class="svc-icon">🟢</div><div class="svc-name">WhatsApp</div><div class="svc-count">262 000+ numéros</div></div>
+        <div class="svc"><div class="svc-icon">⬛</div><div class="svc-name">TikTok</div><div class="svc-count">500 000+ numéros</div></div>
+        <div class="svc"><div class="svc-icon">🔷</div><div class="svc-name">Telegram</div><div class="svc-count">493 000+ numéros</div></div>
+        <div class="svc"><div class="svc-icon">🔵</div><div class="svc-name">Facebook</div><div class="svc-count">497 000+ numéros</div></div>
+        <div class="svc"><div class="svc-icon">🌸</div><div class="svc-name">Instagram</div><div class="svc-count">627 000+ numéros</div></div>
+        <div class="svc"><div class="svc-icon">🔴</div><div class="svc-name">Netflix</div><div class="svc-count">1 176 000+ numéros</div></div>
+        <div class="svc"><div class="svc-icon">🎮</div><div class="svc-name">Discord</div><div class="svc-count">1 100 000+ numéros</div></div>
+      </div>
+    </div>
+  </div>
+  <section id="tarifs">
+    <div class="section-badge">💰 Prix abordables</div>
+    <h2 class="section-title">Des tarifs <em>accessibles</em></h2>
+    <p class="section-sub">Recharge une fois, utilise plusieurs fois. Pas d'abonnement.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-label">Starter</div>
+        <div class="price-amount">500 <span>FCFA</span></div>
+        <div class="price-desc">Pour tester le service</div>
+        <ul class="price-features">
+          <li>5 crédits</li>
+          <li>Valable indéfiniment</li>
+          <li>Tous les services</li>
+          <li>Remboursement garanti</li>
+        </ul>
+      </div>
+      <div class="price-card featured">
+        <div class="price-label" style="color:var(--gold)">⭐ Populaire</div>
+        <div class="price-amount">2 000 <span>FCFA</span></div>
+        <div class="price-desc">Le meilleur rapport qualité/prix</div>
+        <ul class="price-features">
+          <li>24 crédits</li>
+          <li>Valable indéfiniment</li>
+          <li>Tous les services</li>
+          <li>Remboursement garanti</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-label">Pro</div>
+        <div class="price-amount">10 000 <span>FCFA</span></div>
+        <div class="price-desc">Pour les utilisateurs réguliers</div>
+        <ul class="price-features">
+          <li>130 crédits</li>
+          <li>Valable indéfiniment</li>
+          <li>Tous les services</li>
+          <li>Remboursement garanti</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="services-section" id="paiement">
+    <div class="services-inner">
+      <div class="section-badge">💳 Mobile Money</div>
+      <h2 class="section-title">Paie comme tu <em>veux</em></h2>
+      <p class="section-sub">Tous les moyens de paiement Mobile Money acceptés.</p>
+      <div class="payment-methods">
+        <div class="pay-method"><div class="pay-icon">📱</div><div><div class="pay-name">T-Money</div><div class="pay-country">🇹🇬 Togo</div></div></div>
+        <div class="pay-method"><div class="pay-icon">📱</div><div><div class="pay-name">Flooz</div><div class="pay-country">🇹🇬 Togo</div></div></div>
+        <div class="pay-method"><div class="pay-icon">📱</div><div><div class="pay-name">MTN MoMo</div><div class="pay-country">🇨🇮 🇧🇯 CI / Bénin</div></div></div>
+        <div class="pay-method"><div class="pay-icon">🌊</div><div><div class="pay-name">Wave</div><div class="pay-country">🌍 Afrique de l'Ouest</div></div></div>
+        <div class="pay-method"><div class="pay-icon">🍊</div><div><div class="pay-name">Orange Money</div><div class="pay-country">🌍 Afrique de l'Ouest</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-badge">⭐ Avis clients</div>
+    <h2 class="section-title">Ils nous font <em>confiance</em></h2>
+    <p class="section-sub">Des milliers d'utilisateurs en Afrique de l'Ouest.</p>
+    <div class="testimonials">
+      <div class="testi"><div class="stars">★★★★★</div><div class="testi-text">"J'ai pu créer mon compte Google en moins de 3 minutes. Le code est arrivé rapidement et le paiement via T-Money était très simple."</div><div class="testi-author"><div class="testi-avatar">K</div><div><div class="testi-name">Kofi A.</div><div class="testi-loc">🇹🇬 Lomé, Togo</div></div></div></div>
+      <div class="testi"><div class="stars">★★★★★</div><div class="testi-text">"Enfin un service qui accepte Flooz ! J'utilise NumAfrik pour tous mes comptes professionnels."</div><div class="testi-author"><div class="testi-avatar">A</div><div><div class="testi-name">Ama S.</div><div class="testi-loc">🇧🇯 Cotonou, Bénin</div></div></div></div>
+      <div class="testi"><div class="stars">★★★★★</div><div class="testi-text">"Service rapide et fiable. J'ai commandé un numéro pour WhatsApp Business et reçu le SMS en 2 minutes."</div><div class="testi-author"><div class="testi-avatar">M</div><div><div class="testi-name">Moussa D.</div><div class="testi-loc">🇨🇮 Abidjan, Côte d'Ivoire</div></div></div></div>
+    </div>
+  </section>
+
+  <div class="cta-section" id="app">
+    <div class="cta-inner">
+      <div class="section-badge">🚀 Commence maintenant</div>
+      <h2 class="section-title" style="text-align:center">Prêt à commencer ?</h2>
+      <p style="font-size:16px;color:var(--muted);margin:16px 0 36px;line-height:1.6;">Crée ton compte gratuitement et reçois ton premier numéro virtuel en moins de 5 minutes.</p>
+      <a href="#" class="btn-gold" style="font-size:18px;padding:18px 40px;">⚡ Créer mon compte gratuit</a>
+      <p style="font-size:13px;color:var(--muted);margin-top:16px;">Remboursement automatique garanti si pas de SMS en 20 minutes</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <img src="logo.png" alt="NumAfrik" />
+      <span>Num<em>Afrik</em></span>
+    </div>
+    <p class="footer-text">La plateforme de numéros virtuels pour l'Afrique de l'Ouest</p>
+    <p class="footer-copy">© 2025 NumAfrik — Tous droits réservés · Togo 🇹🇬</p>
+  </footer>
+
+</body>
+    </html>
